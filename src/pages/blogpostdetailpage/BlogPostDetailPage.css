@@ -16,9 +16,9 @@
     margin: 150px;
     padding: 50px 150px 50px 150px;
     text-align: left;
-    border: 3px solid #3E4047;
     border-radius: 180px;
     box-shadow: 8px 8px 8px grey;
+    border: 1px solid #3E4047;
 }
 
 .blogpost-detail-blogpost-container h2 {

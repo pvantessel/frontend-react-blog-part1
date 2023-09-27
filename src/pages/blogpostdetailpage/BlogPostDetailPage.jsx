@@ -12,7 +12,7 @@ function BlogPostDetailPage() {
     });
 
     return (
-        <article className="blogpost-detail-container">
+        <section className="blogpost-detail-container">
             <div className="blogpost-detail-blogpost-container">
                 <h2>{title} ({readTime} minuten)</h2>
                 <h3>{subtitle}</h3>
@@ -26,7 +26,7 @@ function BlogPostDetailPage() {
                 </Link>
 
             </div>
-        </article>
+        </section>
     );
 }
 

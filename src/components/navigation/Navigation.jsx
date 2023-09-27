@@ -28,7 +28,7 @@ function Navigation() {
                         <li>
                             <NavLink
                                 className={({isActive}) => isActive ? 'active-menu-link' : 'default-menu-link'}
-                                to="/nieuwe-post">Nieuwe Post
+                                to="/nieuwepost">Nieuwe Post
                             </NavLink>
                         </li>
                         <li>

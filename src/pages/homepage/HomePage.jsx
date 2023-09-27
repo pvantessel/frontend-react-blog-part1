@@ -12,7 +12,7 @@ function HomePage() {
                     <h2>BlOgventure de beste website voor uw Blogs! </h2>
                     <p>BlOgventure is een medium waar iedereen zijn verhaal kwijt kan, want iedereen heeft immers een verhaal dat gehoord mag worden.
                     Dus wil je jouw verhaal vertellen en gebruik maken van ons platform, klik dan <Link to="/nieuwepost">hier</Link> om een nieuwe post te plaatsen.</p>
-                    <p>SUCCES !!!</p>
+                    <p>Veel schrijf plezier !!!</p>
                 </div>
             </div>
         </section>
