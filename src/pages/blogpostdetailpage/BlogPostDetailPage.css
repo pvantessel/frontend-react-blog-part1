@@ -1,6 +1,6 @@
 .blogpost-detail-container {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     color: #3E4047;
     background-color: #75E699;
     display: flex;
@@ -34,4 +34,9 @@
 
 .blogpost-detail-blogpost-container a:hover {
     color: #75E699;
+}
+
+.displayErrorDetailPage {
+    color: red;
+    font-weight: bold;
 }
