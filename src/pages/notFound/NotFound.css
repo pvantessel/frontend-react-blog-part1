@@ -1,6 +1,6 @@
 .notfound-container {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     color: #3E4047;
     background-color: #75E699;
     display: flex;
