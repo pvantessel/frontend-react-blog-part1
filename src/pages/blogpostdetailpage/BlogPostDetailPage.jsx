@@ -26,8 +26,18 @@ function BlogPostDetailPage() {
                 setError('Data ophalen is op dit moment even niet mogelijk, probeert u het later nog eens.');
             }
         }
-        getPostDetails();
+        // void prevents "curly line" below function name.
+        void getPostDetails();
     }, [id]);
+
+    async function deleteLastBlogItem() {
+        try {
+            const response = await axios.delete(`http://localhost:3000/posts/${id}`);
+            console.log(response.data)
+        } catch (e) {
+            console.error(e);
+        }
+    };
 
     const { title, readTime, subtitle, author, created, content, comments, shares } = showDetails;
 
@@ -43,11 +53,14 @@ function BlogPostDetailPage() {
                         <p>Geschreven door {author} op {formatDateString(created)}</p>
                         <p>{content}</p>
                         <p><em>{comments} reacties - {shares} keer gedeeld</em></p>
+
                         <Link to="/overzicht">
                             <p>Ga terug naar het overzicht van alle Blog posts</p>
                         </Link>
                     </>
                 )}
+                <button type="button" onClick={deleteLastBlogItem} className="delete-lastpost-button">Verwijder laatste post</button>
+
             </div>
         </section>
     );
