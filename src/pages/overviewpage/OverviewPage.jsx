@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './OverviewPage.css';
 import {Link} from 'react-router-dom';
 import blogpost from "../../assets/blogpost.jpeg";
@@ -9,16 +9,20 @@ function OverviewPage() {
     const [displayPosts, setDisplayPosts] = useState([]);
     const [error, setError] = useState(null);
 
-    async function getAllPosts() {
-        try {
-            const response = await axios.get('http://localhost:3000/posts');
-            setDisplayPosts(response.data);
-            setError(null);
-        } catch (e) {
-            console.error(e);
-            setError('Data ophalen is op dit moment even niet mogelijk, probeert u het later nog eens.');
+    useEffect(() => {
+        async function getAllPosts() {
+            try {
+                const response = await axios.get('http://localhost:3000/posts');
+                setDisplayPosts(response.data);
+                setError(null);
+            } catch (e) {
+                console.error(e);
+                setError('Data ophalen is op dit moment even niet mogelijk, probeert u het later nog eens.');
+            }
         }
-    }
+        // void prevents "curly line" below function name.
+        void getAllPosts();
+    }, []);
 
     return (
         <section>
@@ -31,9 +35,6 @@ function OverviewPage() {
                         <p className="counter-color">{displayPosts.length}</p>
                     </div>
                 </div>
-
-                <button type="button" onClick={getAllPosts}>Haal alle posts op</button>
-
 
                 {error ? (
                     <p className="displayErrorOverviewPage">{error}</p>
